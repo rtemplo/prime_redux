@@ -1,0 +1,19 @@
+{
+  "name": "prime_redux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rtemplo/prime_redux.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rtemplo/prime_redux/issues"
+  },
+  "homepage": "https://github.com/rtemplo/prime_redux#readme"
+}
