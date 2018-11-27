@@ -1,51 +1,22 @@
 import React, { Component } from "react";
-import Script from "react-load-script";
+import { Switch, Route } from "react-router-dom";
+import asyncComponent from "./components/hoc/asyncComponent";
+import "primereact/resources/themes/nova-light/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeflex/primeflex.css";
+import "primeicons/primeicons.css";
 
-import logo from "./logo.svg";
-import "./App.css";
+const asyncTestForm = asyncComponent(() => {
+  return import("./views/TestForm/TestForm");
+});
 
 class App extends Component {
-  state = {
-    scriptLoaded: false
-  };
-
-  handleScriptCreate = () => {
-    this.setState({ scriptLoaded: false });
-  };
-
-  handleScriptError = () => {
-    this.setState({ scriptError: true });
-  };
-
-  handleScriptLoad = () => {
-    this.setState({ scriptLoaded: true });
-  };
-
   render() {
     return (
-      <div className="App">
-        <Script
-          url="/samplescript.js"
-          onCreate={this.handleScriptCreate}
-          onError={this.handleScriptError}
-          onLoad={this.handleScriptLoad}
-        />
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {this.state.scriptLoaded ? "Hi Srini" : null}
-            <br />
-            Learn React Fast
-          </a>
-        </header>
+      <div>
+        <Switch>
+          <Route path="/" exact component={asyncTestForm} />
+        </Switch>
       </div>
     );
   }

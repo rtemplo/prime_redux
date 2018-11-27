@@ -1,19 +1,30 @@
 {
   "name": "prime_redux",
   "version": "1.0.0",
-  "description": "",
+  "description": "VZ_CustomFit",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "node index.js",
+    "client": "npm run start --prefix client",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=true npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rtemplo/prime_redux.git"
   },
-  "author": "",
+  "author": "Ray Templo",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/rtemplo/prime_redux/issues"
   },
-  "homepage": "https://github.com/rtemplo/prime_redux#readme"
+  "homepage": "https://github.com/rtemplo/prime_redux#readme",
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "node-sass-chokidar": "^1.3.4",
+    "nodemon": "^1.18.6",
+    "postgraphile": "^4.0.1"
+  }
 }
