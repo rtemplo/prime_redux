@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
-import asyncComponent from "./components/hoc/asyncComponent";
+import asyncComponent from "./components/_HOC/asyncComponent";
 import "primereact/resources/themes/nova-light/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeflex/primeflex.css";

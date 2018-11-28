@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App";
+import Layout from "./layouts";
 import registerServiceWorker from "./registerServiceWorker";
 
 // Redux Requirements
@@ -101,7 +101,7 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <ApolloProvider client={client}>
-        <App />
+        <Layout />
       </ApolloProvider>
     </BrowserRouter>
   </Provider>,
